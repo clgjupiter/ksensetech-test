@@ -112,14 +112,14 @@ function evaluatePatients(patients) {
             dataIssues.push(p.patient_id);
     }
 
-    return { highRiskPatients: highRisk, feverPatients, dataQualityIssues: dataIssues };
+    return { high_risk_patients: highRisk, fever_patients: feverPatients, data_quality_issues: dataIssues };
 }
 
 async function submitAssessment(result) {
     const payload = {
-        highRiskPatients: result.highRiskPatients ?? [],
-        feverPatients: result.feverPatients ?? [],
-        dataQualityIssues: result.dataQualityIssues ?? [],
+        high_risk_patients: result.high_risk_patients ?? [],
+        fever_patients: result.fever_patients ?? [],
+        data_quality_issues: result.data_quality_issues ?? [],
     };
 
     console.log("Payload to submit:\n", JSON.stringify(payload, null, 2));
